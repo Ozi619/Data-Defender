@@ -1,0 +1,17 @@
+const express = require('express');
+const router = express.Router();
+
+// Simple placeholder logic
+router.post('/', (req, res) => {
+  const { text } = req.body;
+  const suspiciousWords = ['urgent', 'verify', 'password', 'click here', 'login'];
+  const found = suspiciousWords.filter(word => text.toLowerCase().includes(word));
+
+  if (found.length > 0) {
+    res.json({ risk: 'High', reason: `Suspicious words: ${found.join(', ')}` });
+  } else {
+    res.json({ risk: 'Low', reason: 'No common phishing keywords found.' });
+  }
+});
+
+module.exports = router;

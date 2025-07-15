@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CyberSentinel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CyberSentinel</h1>
+  <div class="section">
+    <h2>Phishing Checker</h2>
+    <textarea id="phishingText" rows="4" cols="50" placeholder="Paste message here..."></textarea><br>
+    <button onclick="checkPhishing()">Check</button>
+    <div id="phishingResult"></div>
+  </div>
+
+  <div class="section">
+    <h2>Data Breach Checker</h2>
+    <input type="email" id="breachEmail" placeholder="Enter your email"/><br>
+    <button onclick="checkBreach()">Check</button>
+    <div id="breachResult"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
